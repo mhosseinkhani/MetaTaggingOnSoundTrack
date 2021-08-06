@@ -261,7 +261,7 @@
             this.label2.Padding = new System.Windows.Forms.Padding(0, 0, 40, 0);
             this.label2.Size = new System.Drawing.Size(674, 34);
             this.label2.TabIndex = 13;
-            this.label2.Text = "Sound Track Meta Test Adder";
+            this.label2.Text = "Sound Track Meta Text Adder";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
