@@ -13,36 +13,44 @@ namespace MetaTaggingOnSoundTrack
 {
     public partial class MetaTaggingOnSoundTrackPlayer : Form
     {
-        List<MetaTagItem> _metaTags = new List<MetaTagItem>();
+        readonly List<MetaTagItem> _metaTags = new List<MetaTagItem>();
         public MetaTaggingOnSoundTrackPlayer()
         {
             InitializeComponent();
         }
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
 
-        //Create Global Variables of String Type Array to save the titles or name of the Tracks and path of the track
-        String[] paths, files;
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        public static extern bool ReleaseCapture();
+
+        private void Form1_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
+        }
+        String[] _paths, _files;
 
         private void btnSelectSongs_Click(object sender, EventArgs e)
         {
-            //Code to SElect Songs
-            OpenFileDialog ofd = new OpenFileDialog();
-            //Code to select multiple files
-            ofd.Multiselect = true;
-            if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            var openFileDialog = new OpenFileDialog {Multiselect = true};
+            if (openFileDialog.ShowDialog() != System.Windows.Forms.DialogResult.OK) return;
+            _files = openFileDialog.SafeFileNames;  
+            _paths = openFileDialog.FileNames;  
+            foreach (var file in _files)
             {
-                files = ofd.SafeFileNames; //Save the names of the track in files array
-                paths = ofd.FileNames; //Save the paths of the tracks in path array
-                //Display the music titles in listbox
-                for (int i = 0; i < files.Length; i++)
-                {
-                    listBoxSounds.Items.Add(files[i]); //Display Songs in Listbox
-                }
+                listBoxSounds.Items.Add(file);
             }
         }
 
         private void listBoxSongs_SelectedIndexChanged(object sender, EventArgs e)
         {
-            WMPlayer.URL = paths[listBoxSounds.SelectedIndex];
+            WMPlayer.URL = _paths[listBoxSounds.SelectedIndex];
         }
 
         private void btnForward_Click(object sender, EventArgs e)

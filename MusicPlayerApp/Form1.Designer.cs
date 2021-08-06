@@ -47,6 +47,7 @@
             this.Time = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TimeString = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MetaData = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.WMPlayer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMetaTags)).BeginInit();
             this.SuspendLayout();
@@ -56,7 +57,7 @@
             this.listBoxSounds.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxSounds.FormattingEnabled = true;
             this.listBoxSounds.ItemHeight = 16;
-            this.listBoxSounds.Location = new System.Drawing.Point(485, 12);
+            this.listBoxSounds.Location = new System.Drawing.Point(483, 105);
             this.listBoxSounds.Name = "listBoxSounds";
             this.listBoxSounds.Size = new System.Drawing.Size(183, 244);
             this.listBoxSounds.TabIndex = 1;
@@ -67,7 +68,7 @@
             this.btnBorwse.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.btnBorwse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBorwse.ForeColor = System.Drawing.Color.White;
-            this.btnBorwse.Location = new System.Drawing.Point(485, 263);
+            this.btnBorwse.Location = new System.Drawing.Point(483, 50);
             this.btnBorwse.Name = "btnBorwse";
             this.btnBorwse.Size = new System.Drawing.Size(183, 49);
             this.btnBorwse.TabIndex = 2;
@@ -78,7 +79,7 @@
             // WMPlayer
             // 
             this.WMPlayer.Enabled = true;
-            this.WMPlayer.Location = new System.Drawing.Point(10, 12);
+            this.WMPlayer.Location = new System.Drawing.Point(8, 49);
             this.WMPlayer.Name = "WMPlayer";
             this.WMPlayer.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("WMPlayer.OcxState")));
             this.WMPlayer.Size = new System.Drawing.Size(467, 300);
@@ -86,7 +87,7 @@
             // 
             // btnBackward
             // 
-            this.btnBackward.Location = new System.Drawing.Point(10, 318);
+            this.btnBackward.Location = new System.Drawing.Point(8, 355);
             this.btnBackward.Name = "btnBackward";
             this.btnBackward.Size = new System.Drawing.Size(75, 32);
             this.btnBackward.TabIndex = 5;
@@ -96,7 +97,7 @@
             // 
             // btnForward
             // 
-            this.btnForward.Location = new System.Drawing.Point(332, 317);
+            this.btnForward.Location = new System.Drawing.Point(330, 354);
             this.btnForward.Name = "btnForward";
             this.btnForward.Size = new System.Drawing.Size(75, 32);
             this.btnForward.TabIndex = 6;
@@ -106,7 +107,7 @@
             // 
             // btnAddMetaData
             // 
-            this.btnAddMetaData.Location = new System.Drawing.Point(170, 318);
+            this.btnAddMetaData.Location = new System.Drawing.Point(168, 355);
             this.btnAddMetaData.Name = "btnAddMetaData";
             this.btnAddMetaData.Size = new System.Drawing.Size(75, 32);
             this.btnAddMetaData.TabIndex = 7;
@@ -116,7 +117,7 @@
             // 
             // textBoxMetaData
             // 
-            this.textBoxMetaData.Location = new System.Drawing.Point(413, 356);
+            this.textBoxMetaData.Location = new System.Drawing.Point(411, 393);
             this.textBoxMetaData.Multiline = true;
             this.textBoxMetaData.Name = "textBoxMetaData";
             this.textBoxMetaData.Size = new System.Drawing.Size(250, 189);
@@ -126,7 +127,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(413, 549);
+            this.btnSave.Location = new System.Drawing.Point(411, 586);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(78, 32);
             this.btnSave.TabIndex = 9;
@@ -136,7 +137,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(499, 549);
+            this.btnCancel.Location = new System.Drawing.Point(497, 586);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(78, 32);
             this.btnCancel.TabIndex = 9;
@@ -146,7 +147,7 @@
             // 
             // btnRemove
             // 
-            this.btnRemove.Location = new System.Drawing.Point(585, 549);
+            this.btnRemove.Location = new System.Drawing.Point(583, 586);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(78, 32);
             this.btnRemove.TabIndex = 9;
@@ -156,7 +157,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(607, 336);
+            this.label1.Location = new System.Drawing.Point(605, 373);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 13);
             this.label1.TabIndex = 11;
@@ -164,7 +165,7 @@
             // 
             // btnBackwardTwoSecond
             // 
-            this.btnBackwardTwoSecond.Location = new System.Drawing.Point(89, 318);
+            this.btnBackwardTwoSecond.Location = new System.Drawing.Point(87, 355);
             this.btnBackwardTwoSecond.Name = "btnBackwardTwoSecond";
             this.btnBackwardTwoSecond.Size = new System.Drawing.Size(75, 32);
             this.btnBackwardTwoSecond.TabIndex = 5;
@@ -174,7 +175,7 @@
             // 
             // btnForwardTwoSecond
             // 
-            this.btnForwardTwoSecond.Location = new System.Drawing.Point(251, 317);
+            this.btnForwardTwoSecond.Location = new System.Drawing.Point(249, 354);
             this.btnForwardTwoSecond.Name = "btnForwardTwoSecond";
             this.btnForwardTwoSecond.Size = new System.Drawing.Size(75, 32);
             this.btnForwardTwoSecond.TabIndex = 6;
@@ -192,7 +193,7 @@
             this.Time,
             this.TimeString,
             this.MetaData});
-            this.dataGridViewMetaTags.Location = new System.Drawing.Point(10, 356);
+            this.dataGridViewMetaTags.Location = new System.Drawing.Point(8, 393);
             this.dataGridViewMetaTags.MultiSelect = false;
             this.dataGridViewMetaTags.Name = "dataGridViewMetaTags";
             this.dataGridViewMetaTags.ReadOnly = true;
@@ -216,6 +217,7 @@
             this.Time.FillWeight = 80F;
             this.Time.HeaderText = "Time";
             this.Time.Name = "Time";
+            this.Time.ReadOnly = true;
             this.Time.Width = 80;
             // 
             // TimeString
@@ -223,6 +225,7 @@
             this.TimeString.FillWeight = 80F;
             this.TimeString.HeaderText = "TimeString";
             this.TimeString.Name = "TimeString";
+            this.TimeString.ReadOnly = true;
             this.TimeString.Width = 80;
             // 
             // MetaData
@@ -230,12 +233,28 @@
             this.MetaData.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.MetaData.HeaderText = "MetaData";
             this.MetaData.Name = "MetaData";
+            this.MetaData.ReadOnly = true;
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(153)))), ((int)(((byte)(185)))));
+            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(0, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(674, 34);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Sound Track Meta Test Adder";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
             // MetaTaggingOnSoundTrackPlayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(675, 596);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(41)))), ((int)(((byte)(78)))));
+            this.ClientSize = new System.Drawing.Size(674, 629);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridViewMetaTags);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxMetaData);
@@ -250,9 +269,11 @@
             this.Controls.Add(this.WMPlayer);
             this.Controls.Add(this.btnBorwse);
             this.Controls.Add(this.listBoxSounds);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MetaTaggingOnSoundTrackPlayer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Music Player App";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.WMPlayer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMetaTags)).EndInit();
             this.ResumeLayout(false);
@@ -279,6 +300,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TimeString;
         private System.Windows.Forms.DataGridViewTextBoxColumn MetaData;
         private System.Windows.Forms.DataGridView dataGridViewMetaTags;
+        private System.Windows.Forms.Label label2;
     }
 }
 
