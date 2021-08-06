@@ -48,8 +48,11 @@
             this.TimeString = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MetaData = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.WMPlayer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMetaTags)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // listBoxSounds
@@ -65,7 +68,7 @@
             // 
             // btnBorwse
             // 
-            this.btnBorwse.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnBorwse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(95)))), ((int)(((byte)(46)))));
             this.btnBorwse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBorwse.ForeColor = System.Drawing.Color.White;
             this.btnBorwse.Location = new System.Drawing.Point(483, 50);
@@ -87,32 +90,35 @@
             // 
             // btnBackward
             // 
+            this.btnBackward.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(246)))));
             this.btnBackward.Location = new System.Drawing.Point(8, 355);
             this.btnBackward.Name = "btnBackward";
             this.btnBackward.Size = new System.Drawing.Size(75, 32);
             this.btnBackward.TabIndex = 5;
             this.btnBackward.Text = "5s   <<";
-            this.btnBackward.UseVisualStyleBackColor = true;
+            this.btnBackward.UseVisualStyleBackColor = false;
             this.btnBackward.Click += new System.EventHandler(this.btnBackward_Click);
             // 
             // btnForward
             // 
+            this.btnForward.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(246)))));
             this.btnForward.Location = new System.Drawing.Point(330, 354);
             this.btnForward.Name = "btnForward";
             this.btnForward.Size = new System.Drawing.Size(75, 32);
             this.btnForward.TabIndex = 6;
             this.btnForward.Text = ">>  5s";
-            this.btnForward.UseVisualStyleBackColor = true;
+            this.btnForward.UseVisualStyleBackColor = false;
             this.btnForward.Click += new System.EventHandler(this.btnForward_Click);
             // 
             // btnAddMetaData
             // 
+            this.btnAddMetaData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(246)))));
             this.btnAddMetaData.Location = new System.Drawing.Point(168, 355);
             this.btnAddMetaData.Name = "btnAddMetaData";
             this.btnAddMetaData.Size = new System.Drawing.Size(75, 32);
             this.btnAddMetaData.TabIndex = 7;
             this.btnAddMetaData.Text = "+ Add";
-            this.btnAddMetaData.UseVisualStyleBackColor = true;
+            this.btnAddMetaData.UseVisualStyleBackColor = false;
             this.btnAddMetaData.Click += new System.EventHandler(this.btnAddMetaData_Click);
             // 
             // textBoxMetaData
@@ -127,66 +133,74 @@
             // 
             // btnSave
             // 
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(246)))));
             this.btnSave.Location = new System.Drawing.Point(411, 586);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(78, 32);
             this.btnSave.TabIndex = 9;
             this.btnSave.Text = "&Save";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnCancel
             // 
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(246)))));
             this.btnCancel.Location = new System.Drawing.Point(497, 586);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(78, 32);
             this.btnCancel.TabIndex = 9;
             this.btnCancel.Text = "&Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnRemove
             // 
+            this.btnRemove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(246)))));
             this.btnRemove.Location = new System.Drawing.Point(583, 586);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(78, 32);
             this.btnRemove.TabIndex = 9;
             this.btnRemove.Text = "&Remove";
-            this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(605, 373);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(190)))), ((int)(((byte)(50)))));
+            this.label1.Location = new System.Drawing.Point(589, 373);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 13);
+            this.label1.Size = new System.Drawing.Size(73, 17);
             this.label1.TabIndex = 11;
             this.label1.Text = "Meta Data";
             // 
             // btnBackwardTwoSecond
             // 
+            this.btnBackwardTwoSecond.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(246)))));
             this.btnBackwardTwoSecond.Location = new System.Drawing.Point(87, 355);
             this.btnBackwardTwoSecond.Name = "btnBackwardTwoSecond";
             this.btnBackwardTwoSecond.Size = new System.Drawing.Size(75, 32);
             this.btnBackwardTwoSecond.TabIndex = 5;
             this.btnBackwardTwoSecond.Text = "2s   <<";
-            this.btnBackwardTwoSecond.UseVisualStyleBackColor = true;
+            this.btnBackwardTwoSecond.UseVisualStyleBackColor = false;
             this.btnBackwardTwoSecond.Click += new System.EventHandler(this.btnBackwardTwoSecond_Click);
             // 
             // btnForwardTwoSecond
             // 
+            this.btnForwardTwoSecond.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(238)))), ((int)(((byte)(246)))));
             this.btnForwardTwoSecond.Location = new System.Drawing.Point(249, 354);
             this.btnForwardTwoSecond.Name = "btnForwardTwoSecond";
             this.btnForwardTwoSecond.Size = new System.Drawing.Size(75, 32);
             this.btnForwardTwoSecond.TabIndex = 6;
             this.btnForwardTwoSecond.Text = ">>  2s";
-            this.btnForwardTwoSecond.UseVisualStyleBackColor = true;
+            this.btnForwardTwoSecond.UseVisualStyleBackColor = false;
             this.btnForwardTwoSecond.Click += new System.EventHandler(this.btnForwardTwoSecond_Click);
             // 
             // dataGridViewMetaTags
             // 
             this.dataGridViewMetaTags.AllowUserToAddRows = false;
             this.dataGridViewMetaTags.AllowUserToDeleteRows = false;
+            this.dataGridViewMetaTags.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(190)))), ((int)(((byte)(50)))));
             this.dataGridViewMetaTags.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewMetaTags.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.RowNumber,
@@ -237,23 +251,51 @@
             // 
             // label2
             // 
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(153)))), ((int)(((byte)(185)))));
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(97)))), ((int)(((byte)(106)))));
             this.label2.Dock = System.Windows.Forms.DockStyle.Top;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(190)))), ((int)(((byte)(50)))));
+            this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Name = "label2";
+            this.label2.Padding = new System.Windows.Forms.Padding(0, 0, 40, 0);
             this.label2.Size = new System.Drawing.Size(674, 34);
             this.label2.TabIndex = 13;
             this.label2.Text = "Sound Track Meta Test Adder";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::MetaTaggingOnSoundTrack.Properties.Resources.tag;
+            this.pictureBox1.Location = new System.Drawing.Point(643, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(31, 32);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(95)))), ((int)(((byte)(46)))));
+            this.label3.Location = new System.Drawing.Point(8, 8);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(18, 18);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "X";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
             // MetaTaggingOnSoundTrackPlayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(41)))), ((int)(((byte)(78)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(78)))), ((int)(((byte)(102)))));
             this.ClientSize = new System.Drawing.Size(674, 629);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridViewMetaTags);
             this.Controls.Add(this.label1);
@@ -270,12 +312,14 @@
             this.Controls.Add(this.btnBorwse);
             this.Controls.Add(this.listBoxSounds);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MetaTaggingOnSoundTrackPlayer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Music Player App";
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.WMPlayer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMetaTags)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -301,6 +345,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MetaData;
         private System.Windows.Forms.DataGridView dataGridViewMetaTags;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label3;
     }
 }
 
