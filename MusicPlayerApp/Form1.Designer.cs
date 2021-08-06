@@ -30,15 +30,25 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MetaTaggingOnSoundTrackPlayer));
             this.listBoxSounds = new System.Windows.Forms.ListBox();
-            this.btnSelectSongs = new System.Windows.Forms.Button();
-            this.axWindowsMediaPlayerMusic = new AxWMPLib.AxWindowsMediaPlayer();
-            this.listBoxMetaTags = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayerMusic)).BeginInit();
+            this.btnBorwse = new System.Windows.Forms.Button();
+            this.WMPlayer = new AxWMPLib.AxWindowsMediaPlayer();
+            this.btnBackward = new System.Windows.Forms.Button();
+            this.btnForward = new System.Windows.Forms.Button();
+            this.btnAddMetaData = new System.Windows.Forms.Button();
+            this.textBoxMetaData = new System.Windows.Forms.TextBox();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnRemove = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnBackwardTwoSecond = new System.Windows.Forms.Button();
+            this.btnForwardTwoSecond = new System.Windows.Forms.Button();
+            this.dataGridViewMetaTags = new System.Windows.Forms.DataGridView();
+            this.RowNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Time = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TimeString = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MetaData = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.WMPlayer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMetaTags)).BeginInit();
             this.SuspendLayout();
             // 
             // listBoxSounds
@@ -52,113 +62,223 @@
             this.listBoxSounds.TabIndex = 1;
             this.listBoxSounds.SelectedIndexChanged += new System.EventHandler(this.listBoxSongs_SelectedIndexChanged);
             // 
-            // btnSelectSongs
+            // btnBorwse
             // 
-            this.btnSelectSongs.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.btnSelectSongs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSelectSongs.ForeColor = System.Drawing.Color.White;
-            this.btnSelectSongs.Location = new System.Drawing.Point(485, 263);
-            this.btnSelectSongs.Name = "btnSelectSongs";
-            this.btnSelectSongs.Size = new System.Drawing.Size(183, 49);
-            this.btnSelectSongs.TabIndex = 2;
-            this.btnSelectSongs.Text = "Select Songs";
-            this.btnSelectSongs.UseVisualStyleBackColor = false;
-            this.btnSelectSongs.Click += new System.EventHandler(this.btnSelectSongs_Click);
+            this.btnBorwse.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnBorwse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBorwse.ForeColor = System.Drawing.Color.White;
+            this.btnBorwse.Location = new System.Drawing.Point(485, 263);
+            this.btnBorwse.Name = "btnBorwse";
+            this.btnBorwse.Size = new System.Drawing.Size(183, 49);
+            this.btnBorwse.TabIndex = 2;
+            this.btnBorwse.Text = "Browse";
+            this.btnBorwse.UseVisualStyleBackColor = false;
+            this.btnBorwse.Click += new System.EventHandler(this.btnSelectSongs_Click);
             // 
-            // axWindowsMediaPlayerMusic
+            // WMPlayer
             // 
-            this.axWindowsMediaPlayerMusic.Enabled = true;
-            this.axWindowsMediaPlayerMusic.Location = new System.Drawing.Point(10, 12);
-            this.axWindowsMediaPlayerMusic.Name = "axWindowsMediaPlayerMusic";
-            this.axWindowsMediaPlayerMusic.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayerMusic.OcxState")));
-            this.axWindowsMediaPlayerMusic.Size = new System.Drawing.Size(467, 300);
-            this.axWindowsMediaPlayerMusic.TabIndex = 3;
+            this.WMPlayer.Enabled = true;
+            this.WMPlayer.Location = new System.Drawing.Point(10, 12);
+            this.WMPlayer.Name = "WMPlayer";
+            this.WMPlayer.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("WMPlayer.OcxState")));
+            this.WMPlayer.Size = new System.Drawing.Size(467, 300);
+            this.WMPlayer.TabIndex = 3;
             // 
-            // listBoxMetaTags
+            // btnBackward
             // 
-            this.listBoxMetaTags.FormattingEnabled = true;
-            this.listBoxMetaTags.Location = new System.Drawing.Point(10, 356);
-            this.listBoxMetaTags.Name = "listBoxMetaTags";
-            this.listBoxMetaTags.Size = new System.Drawing.Size(658, 225);
-            this.listBoxMetaTags.TabIndex = 4;
+            this.btnBackward.Location = new System.Drawing.Point(10, 318);
+            this.btnBackward.Name = "btnBackward";
+            this.btnBackward.Size = new System.Drawing.Size(75, 32);
+            this.btnBackward.TabIndex = 5;
+            this.btnBackward.Text = "5s   <<";
+            this.btnBackward.UseVisualStyleBackColor = true;
+            this.btnBackward.Click += new System.EventHandler(this.btnBackward_Click);
             // 
-            // button1
+            // btnForward
             // 
-            this.button1.Location = new System.Drawing.Point(10, 318);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 32);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnForward.Location = new System.Drawing.Point(332, 317);
+            this.btnForward.Name = "btnForward";
+            this.btnForward.Size = new System.Drawing.Size(75, 32);
+            this.btnForward.TabIndex = 6;
+            this.btnForward.Text = ">>  5s";
+            this.btnForward.UseVisualStyleBackColor = true;
+            this.btnForward.Click += new System.EventHandler(this.btnForward_Click);
             // 
-            // button2
+            // btnAddMetaData
             // 
-            this.button2.Location = new System.Drawing.Point(91, 318);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 32);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnAddMetaData.Location = new System.Drawing.Point(170, 318);
+            this.btnAddMetaData.Name = "btnAddMetaData";
+            this.btnAddMetaData.Size = new System.Drawing.Size(75, 32);
+            this.btnAddMetaData.TabIndex = 7;
+            this.btnAddMetaData.Text = "+ Add";
+            this.btnAddMetaData.UseVisualStyleBackColor = true;
+            this.btnAddMetaData.Click += new System.EventHandler(this.btnAddMetaData_Click);
             // 
-            // button3
+            // textBoxMetaData
             // 
-            this.button3.Location = new System.Drawing.Point(170, 318);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 32);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.textBoxMetaData.Location = new System.Drawing.Point(413, 356);
+            this.textBoxMetaData.Multiline = true;
+            this.textBoxMetaData.Name = "textBoxMetaData";
+            this.textBoxMetaData.Size = new System.Drawing.Size(250, 189);
+            this.textBoxMetaData.TabIndex = 10;
+            this.textBoxMetaData.Enter += new System.EventHandler(this.textBoxMetaData_Enter);
+            this.textBoxMetaData.Leave += new System.EventHandler(this.textBoxMetaData_Leave);
             // 
-            // button4
+            // btnSave
             // 
-            this.button4.Location = new System.Drawing.Point(251, 318);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 32);
-            this.button4.TabIndex = 8;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnSave.Location = new System.Drawing.Point(413, 549);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(78, 32);
+            this.btnSave.TabIndex = 9;
+            this.btnSave.Text = "&Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // button5
+            // btnCancel
             // 
-            this.button5.Location = new System.Drawing.Point(332, 318);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 32);
-            this.button5.TabIndex = 9;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnCancel.Location = new System.Drawing.Point(499, 549);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(78, 32);
+            this.btnCancel.TabIndex = 9;
+            this.btnCancel.Text = "&Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnRemove
+            // 
+            this.btnRemove.Location = new System.Drawing.Point(585, 549);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(78, 32);
+            this.btnRemove.TabIndex = 9;
+            this.btnRemove.Text = "&Remove";
+            this.btnRemove.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(607, 336);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 13);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Meta Data";
+            // 
+            // btnBackwardTwoSecond
+            // 
+            this.btnBackwardTwoSecond.Location = new System.Drawing.Point(89, 318);
+            this.btnBackwardTwoSecond.Name = "btnBackwardTwoSecond";
+            this.btnBackwardTwoSecond.Size = new System.Drawing.Size(75, 32);
+            this.btnBackwardTwoSecond.TabIndex = 5;
+            this.btnBackwardTwoSecond.Text = "2s   <<";
+            this.btnBackwardTwoSecond.UseVisualStyleBackColor = true;
+            this.btnBackwardTwoSecond.Click += new System.EventHandler(this.btnBackwardTwoSecond_Click);
+            // 
+            // btnForwardTwoSecond
+            // 
+            this.btnForwardTwoSecond.Location = new System.Drawing.Point(251, 317);
+            this.btnForwardTwoSecond.Name = "btnForwardTwoSecond";
+            this.btnForwardTwoSecond.Size = new System.Drawing.Size(75, 32);
+            this.btnForwardTwoSecond.TabIndex = 6;
+            this.btnForwardTwoSecond.Text = ">>  2s";
+            this.btnForwardTwoSecond.UseVisualStyleBackColor = true;
+            this.btnForwardTwoSecond.Click += new System.EventHandler(this.btnForwardTwoSecond_Click);
+            // 
+            // dataGridViewMetaTags
+            // 
+            this.dataGridViewMetaTags.AllowUserToAddRows = false;
+            this.dataGridViewMetaTags.AllowUserToDeleteRows = false;
+            this.dataGridViewMetaTags.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewMetaTags.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.RowNumber,
+            this.Time,
+            this.TimeString,
+            this.MetaData});
+            this.dataGridViewMetaTags.Location = new System.Drawing.Point(10, 356);
+            this.dataGridViewMetaTags.MultiSelect = false;
+            this.dataGridViewMetaTags.Name = "dataGridViewMetaTags";
+            this.dataGridViewMetaTags.ReadOnly = true;
+            this.dataGridViewMetaTags.RowHeadersVisible = false;
+            this.dataGridViewMetaTags.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewMetaTags.Size = new System.Drawing.Size(397, 225);
+            this.dataGridViewMetaTags.TabIndex = 12;
+            this.dataGridViewMetaTags.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewMetaTags_CellDoubleClick);
+            // 
+            // RowNumber
+            // 
+            this.RowNumber.FillWeight = 20F;
+            this.RowNumber.Frozen = true;
+            this.RowNumber.HeaderText = "#";
+            this.RowNumber.Name = "RowNumber";
+            this.RowNumber.ReadOnly = true;
+            this.RowNumber.Width = 20;
+            // 
+            // Time
+            // 
+            this.Time.FillWeight = 80F;
+            this.Time.HeaderText = "Time";
+            this.Time.Name = "Time";
+            this.Time.Width = 80;
+            // 
+            // TimeString
+            // 
+            this.TimeString.FillWeight = 80F;
+            this.TimeString.HeaderText = "TimeString";
+            this.TimeString.Name = "TimeString";
+            this.TimeString.Width = 80;
+            // 
+            // MetaData
+            // 
+            this.MetaData.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.MetaData.HeaderText = "MetaData";
+            this.MetaData.Name = "MetaData";
             // 
             // MetaTaggingOnSoundTrackPlayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(675, 596);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.listBoxMetaTags);
-            this.Controls.Add(this.axWindowsMediaPlayerMusic);
-            this.Controls.Add(this.btnSelectSongs);
+            this.Controls.Add(this.dataGridViewMetaTags);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBoxMetaData);
+            this.Controls.Add(this.btnRemove);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnAddMetaData);
+            this.Controls.Add(this.btnForwardTwoSecond);
+            this.Controls.Add(this.btnForward);
+            this.Controls.Add(this.btnBackwardTwoSecond);
+            this.Controls.Add(this.btnBackward);
+            this.Controls.Add(this.WMPlayer);
+            this.Controls.Add(this.btnBorwse);
             this.Controls.Add(this.listBoxSounds);
             this.Name = "MetaTaggingOnSoundTrackPlayer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Music Player App";
-            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayerMusic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WMPlayer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMetaTags)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
         private System.Windows.Forms.ListBox listBoxSounds;
-        private System.Windows.Forms.Button btnSelectSongs;
-        private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayerMusic;
-        private System.Windows.Forms.ListBox listBoxMetaTags;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnBorwse;
+        private AxWMPLib.AxWindowsMediaPlayer WMPlayer;
+        private System.Windows.Forms.Button btnBackward;
+        private System.Windows.Forms.Button btnForward;
+        private System.Windows.Forms.Button btnAddMetaData;
+        private System.Windows.Forms.TextBox textBoxMetaData;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnRemove;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnBackwardTwoSecond;
+        private System.Windows.Forms.Button btnForwardTwoSecond;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RowNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Time;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TimeString;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MetaData;
+        private System.Windows.Forms.DataGridView dataGridViewMetaTags;
     }
 }
 
